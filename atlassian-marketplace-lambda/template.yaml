@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  AtlassianMarketplaceLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: AtlassianMarketplaceLambda
+      Handler: dist/app.lambdaHandler  # Reference the bundled output file
+      Runtime: nodejs18.x
+      CodeUri: .
+      Timeout: 10
+      MemorySize: 128
+      Role: arn:aws:iam::<AWS_ACCOUNT_ID>:role/AtlassianMarketplaceLambdaRole
+      Environment:
+        Variables:
+          QUEUE_URL: https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/lambda-atlassian-standard
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:lambda-atlassian-standard

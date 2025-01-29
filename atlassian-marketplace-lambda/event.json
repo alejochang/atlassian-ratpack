@@ -1,0 +1,20 @@
+{
+  "Records": [
+    {
+      "messageId": "1",
+      "receiptHandle": "abc123",
+      "body": "{\"addon\":\"com.adaptavist.cloud.search\"}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1609459200000",
+        "SenderId": "sender123",
+        "ApproximateFirstReceiveTimestamp": "1609459201000"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "md5hash",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:lambda-atlassian.fifo",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}

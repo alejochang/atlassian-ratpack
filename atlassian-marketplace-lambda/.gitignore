@@ -1,0 +1,6 @@
+node_modules/
+.aws-sam/
+.yarn/
+.yarnrc.yml
+build.js
+lambda-atlassian.zip
